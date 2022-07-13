@@ -1,0 +1,14 @@
+name: A workflow for my Hello World file
+on:
+  pull_request:
+     branches: [develop]
+     types: [ labeled ]
+
+jobs:
+  build:
+    if: contains(github.event.pull_request.labels.*.name, 'test')
+    name: Hello world action
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hola Mundo"
