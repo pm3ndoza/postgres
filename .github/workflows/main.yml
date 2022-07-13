@@ -12,5 +12,11 @@ jobs:
     steps:
       - run: |
           echo "Hola Mundo"
-
-
+  build2:
+    if: contains(github.event.pull_request.labels.*.name, 'test')
+    name: build2-name
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hola Mundo 2"
+        
