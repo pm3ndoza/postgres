@@ -1,4 +1,4 @@
-name: A workflow for my Hello World file
+name: action-name
 on:
   pull_request:
      branches: [master]
@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     if: contains(github.event.pull_request.labels.*.name, 'test')
-    name: Hello world action
+    name: build-name
     runs-on: ubuntu-latest
     steps:
       - run: |
